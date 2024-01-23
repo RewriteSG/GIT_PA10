@@ -22,7 +22,11 @@ public class Player : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
-        if (Input.GetKey(KeyCode.Space) && timer < 0)
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            timer = -1;
+        }
+        if (Input.GetKey(KeyCode.Space) && timer < 0 && Time.timeScale!=0)
         {
             floatTimer = 0;
             timer = 0.2f;
